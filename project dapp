@@ -1,0 +1,24 @@
+npm install -g truffle
+truffle init
+
+truffle create contract Helloworld
+
+pragma solidity >=0.5.0 <0.7.0;
+contract helloworld {
+string name = "celo";
+
+function get name() public view returns (string memory) {
+return name;
+}
+
+function setname(string calldata newName) external {
+name = newName;
+}
+}
+
+
+var Helloworld = artifacts.require("helloworld");
+
+module.exports = function (deployer) {
+deployer.deploy(HelloWorld);
+};
